@@ -1,2 +1,2 @@
-# bmi_app
+# flutter_bodyfatcalculator_app
  
