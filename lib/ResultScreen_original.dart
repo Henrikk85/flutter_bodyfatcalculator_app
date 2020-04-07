@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 
 class ResultScreen extends StatelessWidget {
   final fatModel, bmiModel;
 
-ResultScreen({this.fatModel, this.bmiModel});
+  ResultScreen({this.fatModel, this.bmiModel});
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.only(left: 8, right: 8, top: 32,),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        padding: EdgeInsets.all(4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
 
             Container(
-              height: 200,
-              width: 200,
+              height: 160,
+              width: 160,
               child: fatModel.isNormal ? SvgPicture.asset("assets/images/happy.svg", fit: BoxFit.contain,) : SvgPicture.asset("assets/images/sad.svg", fit: BoxFit.contain,) ,
             ),
 
@@ -73,9 +73,8 @@ ResultScreen({this.fatModel, this.bmiModel});
             
 
           ],
-          ),
         ),
-      ),
+      )
     );
   }
 }
